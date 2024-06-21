@@ -53,7 +53,7 @@
 #define RETRY_RAND_MAX 1000
 #define KEEPALIVE_RAND_MAX 1000
 #define UPDATES_PER_ACTION_MAX 100
-#define PUBLISH_QUEUE_MAX 100
+#define PUBLISH_QUEUE_MAX 10000
 
 static QByteArray applyBodyPatch(const QByteArray &in, const QVariantList &bodyPatch)
 {
