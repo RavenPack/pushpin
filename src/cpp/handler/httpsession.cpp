@@ -513,7 +513,12 @@ public:
 				}
 				else
 				{
-					log_info("httpsession: publish queue at max (%d items), dropping", publishQueue.count());
+					log_info(
+						"httpsession: publish queue at max (%d items), dropping (channel=%s, id=%s)",
+						publishQueue.count(),
+						qPrintable(item.channel),
+						qPrintable(item.id)
+					);
 				}
 			}
 		}
