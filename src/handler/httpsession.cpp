@@ -513,7 +513,7 @@ public:
 				}
 				else
 				{
-					log_debug("httpsession: publish queue at max, dropping");
+					log_info("httpsession: publish queue at max (%d items), dropping", publishQueue.count());
 				}
 			}
 		}
