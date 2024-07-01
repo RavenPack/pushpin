@@ -513,11 +513,22 @@ public:
 				}
 				else
 				{
+					HttpRequestData requestData = adata.requestData;
+					HttpHeaders headers = requestData.headers;
+					QString headersAsStr = QString();
+					for(int i=0; i<headers.size(); ++i){
+						headersAsStr.append(headers[i].first);
+						headersAsStr.append(": ");
+						headersAsStr.append(headers[i].second);
+						headersAsStr.append("; ");
+					}
+
 					log_info(
-						"httpsession: publish queue at max (%d items), dropping (channel=%s, id=%s)",
+						"httpsession: publish queue at max (%d items), dropping (channel=%s, id=%s, headers=%s)",
 						publishQueue.count(),
 						qPrintable(item.channel),
-						qPrintable(item.id)
+						qPrintable(item.id),
+						qPrintable(headersAsStr)
 					);
 				}
 			}
